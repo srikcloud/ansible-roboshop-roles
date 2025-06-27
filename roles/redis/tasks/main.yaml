@@ -1,4 +1,4 @@
-- name: disable redis defaule module
+- name: disable redis default module
   ansible.builtin.command: dnf module disable redis -y
 
 - name: enable redis:7
@@ -20,7 +20,7 @@
     path: /etc/redis/redis.conf
     regexp: 'protected-mode'
     line: protected-mode no
-
+    
 - name: enable and start redis
   ansible.builtin.service:
     name: redis
